@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: web-frontend
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://keycloak:8080/realms/demo-realm/protocol/openid-connect/certs
+
+server:
+  port: 8074
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8070/eureka/
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

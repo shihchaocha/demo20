@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Organizations</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #333; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 10px 14px; text-align: left; }
+        th { background-color: #4a90d9; color: white; }
+        tr:nth-child(even) { background-color: #f5f5f5; }
+    </style>
+</head>
+<body>
+    <h1>Organizations</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Contact Name</th>
+                <th>Contact Email</th>
+                <th>Contact Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="org : ${organizations}">
+                <td th:text="${org.id}"></td>
+                <td th:text="${org.name}"></td>
+                <td th:text="${org.contactName}"></td>
+                <td th:text="${org.contactEmail}"></td>
+                <td th:text="${org.contactPhone}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

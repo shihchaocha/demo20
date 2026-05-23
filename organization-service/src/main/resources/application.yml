@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: organization-service
+  datasource:
+    url: jdbc:postgresql://postgres:5432/demo_db
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database: postgresql
+    show-sql: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # Use jwk-set-uri directly so internal Docker hostname is used for key fetching.
+          # Token issuer validation is skipped (acceptable for dev).
+          jwk-set-uri: http://keycloak:8080/realms/demo-realm/protocol/openid-connect/certs
+
+server:
+  port: 8073
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8070/eureka/
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: gateway-server
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: demo-app
+            client-secret: demo-secret
+            authorization-grant-type: authorization_code
+            # {baseUrl} resolves to the gateway's base URL (http://localhost:8072)
+            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
+            scope: openid,profile,email
+        provider:
+          keycloak:
+            # Browser redirect uses localhost (reachable from outside Docker)
+            authorization-uri: http://localhost:8080/realms/demo-realm/protocol/openid-connect/auth
+            # Server-to-server calls use Docker internal hostname
+            token-uri: http://keycloak:8080/realms/demo-realm/protocol/openid-connect/token
+            jwk-set-uri: http://keycloak:8080/realms/demo-realm/protocol/openid-connect/certs
+            user-info-uri: http://keycloak:8080/realms/demo-realm/protocol/openid-connect/userinfo
+            user-name-attribute: preferred_username
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+      routes:
+        - id: web-frontend
+          uri: lb://web-frontend
+          predicates:
+            - Path=/**
+
+server:
+  port: 8072
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8070/eureka/
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
