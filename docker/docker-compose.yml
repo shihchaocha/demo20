@@ -1,4 +1,4 @@
-services:
+﻿services:
 
   postgres:
     image: postgres:16
@@ -43,7 +43,7 @@ services:
       - backend
 
   eureka-server:
-    image: demo19/eureka-server:latest
+    image: demo20/eureka-server:latest
     ports:
       - "8070:8070"
     healthcheck:
@@ -56,7 +56,7 @@ services:
       - backend
 
   organization-service:
-    image: demo19/organization-service:latest
+    image: demo20/organization-service:latest
     ports:
       - "8073:8073"
     depends_on:
@@ -68,7 +68,7 @@ services:
       - backend
 
   web-frontend:
-    image: demo19/web-frontend:latest
+    image: demo20/web-frontend:latest
     ports:
       - "8074:8074"
     depends_on:
@@ -80,7 +80,7 @@ services:
       - backend
 
   gateway-server:
-    image: demo19/gateway-server:latest
+    image: demo20/gateway-server:latest
     ports:
       - "8072:8072"
       - "8079:8079"
