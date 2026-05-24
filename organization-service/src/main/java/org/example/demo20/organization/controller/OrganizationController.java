@@ -1,4 +1,4 @@
-﻿package org.example.demo20.organization.controller;
+package org.example.demo20.organization.controller;
 
 import org.example.demo20.organization.model.Organization;
 import org.example.demo20.organization.repository.OrganizationRepository;

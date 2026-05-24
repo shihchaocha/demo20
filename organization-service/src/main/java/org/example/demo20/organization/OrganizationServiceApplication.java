@@ -1,4 +1,4 @@
-﻿package org.example.demo20.organization;
+package org.example.demo20.organization;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-﻿package org.example.demo20.organization.model;
+package org.example.demo20.organization.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

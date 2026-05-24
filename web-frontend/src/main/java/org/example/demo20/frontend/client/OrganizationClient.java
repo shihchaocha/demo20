@@ -1,4 +1,4 @@
-﻿package org.example.demo20.frontend.client;
+package org.example.demo20.frontend.client;
 
 import org.example.demo20.frontend.model.Organization;
 import org.springframework.cloud.openfeign.FeignClient;

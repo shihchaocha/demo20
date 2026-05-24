@@ -1,4 +1,4 @@
-﻿package org.example.demo20.frontend.controller;
+package org.example.demo20.frontend.controller;
 
 import org.example.demo20.frontend.client.OrganizationClient;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-﻿package org.example.demo20.organization.config;
+package org.example.demo20.organization.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

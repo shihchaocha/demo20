@@ -1,4 +1,4 @@
-﻿package org.example.demo20.gateway.config;
+package org.example.demo20.gateway.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,15 +11,14 @@ import org.springframework.security.web.server.util.matcher.ServerWebExchangeMat
 @Configuration
 public class SecurityConfig {
 
-    // Order 0: actuator endpoints secured with HTTP Basic Auth
+    // Order 0: actuator endpoints are open (health checks, metrics scraping)
     @Bean
     @Order(0)
     public SecurityWebFilterChain managementSecurityFilterChain(ServerHttpSecurity http) {
         http
             .securityMatcher(ServerWebExchangeMatchers.pathMatchers("/actuator/**"))
             .authorizeExchange(exchanges -> exchanges
-                .anyExchange().authenticated())
-            .httpBasic(Customizer.withDefaults())
+                .anyExchange().permitAll())
             .csrf(ServerHttpSecurity.CsrfSpec::disable);
         return http.build();
     }

@@ -1,4 +1,4 @@
-﻿# demo20 API Test Script
+# demo20 API Test Script
 # Usage: .\test.ps1
 
 $ErrorActionPreference = "Stop"

@@ -1,4 +1,4 @@
-﻿package org.example.demo20.eureka;
+package org.example.demo20.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-﻿package org.example.demo20.frontend.config;
+package org.example.demo20.frontend.config;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;

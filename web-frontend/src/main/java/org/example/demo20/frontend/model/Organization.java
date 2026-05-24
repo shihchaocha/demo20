@@ -1,4 +1,4 @@
-﻿package org.example.demo20.frontend.model;
+package org.example.demo20.frontend.model;
 
 public class Organization {
     private String id;

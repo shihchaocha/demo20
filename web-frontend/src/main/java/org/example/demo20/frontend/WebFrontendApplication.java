@@ -1,4 +1,4 @@
-﻿package org.example.demo20.frontend;
+package org.example.demo20.frontend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
