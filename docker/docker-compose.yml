@@ -93,7 +93,7 @@ services:
       - backend
 
   tempo:
-    image: grafana/tempo:latest
+    image: grafana/tempo:2.6.1
     command: ["-config.file=/etc/tempo.yaml"]
     volumes:
       - ./tempo.yaml:/etc/tempo.yaml
@@ -139,7 +139,7 @@ services:
       - backend
 
   grafana:
-    image: grafana/grafana:latest
+    image: grafana/grafana:11.3.0
     environment:
       GF_AUTH_ANONYMOUS_ENABLED: "true"
       GF_AUTH_ANONYMOUS_ORG_ROLE: "Admin"
